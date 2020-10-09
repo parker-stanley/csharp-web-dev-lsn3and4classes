@@ -6,9 +6,9 @@ namespace SchoolPractice
     public class Course
     {
 
-        private string courseName;
-        private string courseDescription;
-        private Dictionary<string, string> syllabus; 
+        public string CourseName { get; set; }
+        public string CourseDescription { get; set; }
+        public Dictionary<string, string> Syllabus { get; set; }
 
         public Course()
         {
