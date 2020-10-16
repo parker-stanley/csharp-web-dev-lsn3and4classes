@@ -30,8 +30,10 @@ namespace SchoolPractice
         // TODO: Complete the AddGrade method.
         public void AddGrade(int courseCredits, double grade)
         {
-            private double totalQualityScore = Gpa * NumberOfCredits;
-            private double qualityScore = courseCredits * grade;
+            double qualityScore = courseCredits * grade;
+            double totalQualityScore = (Gpa * NumberOfCredits) + qualityScore;
+            NumberOfCredits += courseCredits;
+            Gpa = totalQualityScore / NumberOfCredits;
         }
 
         //TODO: Complete the GetGradeLevel method here:
@@ -58,9 +60,31 @@ namespace SchoolPractice
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
         //  than just the class fields.
+        public override string ToString()
+        {
+            return ($"Name: {Name}\nStudent ID: {StudentId}\nNumber of credits: {NumberOfCredits}\nGPA: {Gpa}");
+        }
 
         // TODO: Add your custom 'Equals' method here. Consider which fields should match in order to call two
         //  Student objects equal.
+        public override bool Equals(object toBeCompared)
+        {
+            if (toBeCompared == null)
+            {
+                return false;
+            }
+            if (toBeCompared.GetType() != this.GetType())
+            {
+                return false;
+            }
 
+            Student s = toBeCompared as Student;
+            return s.StudentId == StudentId;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
