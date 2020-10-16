@@ -18,14 +18,12 @@ namespace SchoolPractice
 
             Teacher smith = new Teacher("John","Smith","Calculus",4);
 
-            Console.WriteLine(smith);
-
             Course calc = new Course();
             calc.Instructor = smith;
             calc.Topic = "Calculus";
             calc.enrolledStudents.Add(parker);
 
-            Console.WriteLine(calc);
+            //Console.WriteLine(calc);
         }
     }
 }
