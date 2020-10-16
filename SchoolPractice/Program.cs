@@ -21,7 +21,7 @@ namespace SchoolPractice
             Course calc = new Course();
             calc.Instructor = smith;
             calc.Topic = "Calculus";
-            calc.enrolledStudents.Add(parker);
+            //calc.enrolledStudents.Add(parker);
 
             //Console.WriteLine(calc);
         }
